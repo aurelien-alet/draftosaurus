@@ -33,6 +33,10 @@ public class DinosauresDraw {
         return drawResult;
     }
 
+    public ArrayList<Dinosaure> getStock(){
+        return stock;
+    }
+
     private void instanciateStock(Integer numberOfDinosaureBySpecy){
         stock = new ArrayList<Dinosaure>();
         for( Integer i = 0; i < numberOfDinosaureBySpecy; i++ ){

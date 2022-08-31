@@ -1,6 +1,6 @@
 package draftosaurus.domain.movesCheckers;
 
-import draftosaurus.domain.board.Paddock;
+import draftosaurus.domain.board.PaddockAttributes;
 import draftosaurus.domain.board.PaddockAssignements;
 
 public class ConstraintCheckerEmpty extends ConstraintChecker {
@@ -8,7 +8,7 @@ public class ConstraintCheckerEmpty extends ConstraintChecker {
     private static boolean CAN_ASSIGN_AS_THERE_IS_NO_DINOSAURE_IN_PADDOCK = true;
     private static boolean CANNOT_ASSIGN_AS_THERE_ARE_DINOSAURES_IN_PADDOCK = false;
 
-    public ConstraintCheckerEmpty(Paddock paddock, PaddockAssignements paddockAssignements) {
+    public ConstraintCheckerEmpty(PaddockAttributes paddock, PaddockAssignements paddockAssignements) {
         super(paddock, paddockAssignements);
     }
 

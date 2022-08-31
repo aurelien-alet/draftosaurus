@@ -6,7 +6,7 @@ import junit.framework.TestSuite;
 
 import org.javatuples.Pair;
 
-import draftosaurus.domain.board.Paddock;
+import draftosaurus.domain.board.PaddockAttributes;
 import draftosaurus.domain.board.PaddockAssignements;
 import draftosaurus.domain.dinosaures.Specy;
 import draftosaurus.testUtils.BoardMock;
@@ -46,14 +46,14 @@ public class ConstraintCheckerNoTyrannosaurusTest extends TestCase {
     }
 
     private static ConstraintCheckerNoTyrannosaurus instanciateConstraintCheckerEmpty(){  
-        Paddock paddockMock = BoardMock.instanciatePaddock();
+        PaddockAttributes paddockMock = BoardMock.instanciatePaddockAttributesMock();
         PaddockAssignements paddockAssignementsMock = BoardMock.instanciatePaddockAssignementsMock();
 
         return new ConstraintCheckerNoTyrannosaurus(paddockMock, paddockAssignementsMock);
     }
 
     private static ConstraintCheckerNoTyrannosaurus instanciateConstraintCheckerWithDiplodocus(){  
-        Paddock paddockMock = BoardMock.instanciatePaddock();
+        PaddockAttributes paddockMock = BoardMock.instanciatePaddockAttributesMock();
         PaddockAssignements paddockAssignementsMock = BoardMock.instanciatePaddockAssignementsWithDinosauresMock(
             new Pair<>(1, Specy.DIPLODOCUS)
         );
@@ -62,7 +62,7 @@ public class ConstraintCheckerNoTyrannosaurusTest extends TestCase {
     }
 
     private static ConstraintCheckerNoTyrannosaurus instanciateConstraintCheckerWithTyrannosaurus(){  
-        Paddock paddockMock = BoardMock.instanciatePaddock();
+        PaddockAttributes paddockMock = BoardMock.instanciatePaddockAttributesMock();
         PaddockAssignements paddockAssignementsMock = BoardMock.instanciatePaddockAssignementsWithDinosauresMock(
             new Pair<>(1, Specy.TYRANNOSAURUS)
         );

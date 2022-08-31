@@ -1,6 +1,6 @@
 package draftosaurus.domain.movesCheckers;
 
-import draftosaurus.domain.board.Paddock;
+import draftosaurus.domain.board.PaddockAttributes;
 import draftosaurus.domain.board.PaddockAssignements;
 import draftosaurus.domain.dinosaures.Specy;
 
@@ -9,7 +9,7 @@ public class ConstraintCheckerNoTyrannosaurus extends ConstraintChecker {
     private static boolean CAN_ASSIGN_AS_THERE_IS_NO_TYRANNOSAURUS_IN_PADDOCK = true;
     private static boolean CANNOT_ASSIGN_AS_THERE_ARE_TYRANNOSAURUS_IN_PADDOCK = false;
 
-    public ConstraintCheckerNoTyrannosaurus(Paddock paddock, PaddockAssignements paddockAssignements) {
+    public ConstraintCheckerNoTyrannosaurus(PaddockAttributes paddock, PaddockAssignements paddockAssignements) {
         super(paddock, paddockAssignements);
     }
 

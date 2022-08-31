@@ -10,6 +10,7 @@ import draftosaurus.domain.dinosaures.Dinosaure;
 import draftosaurus.domain.dinosaures.Specy;
 import draftosaurus.domain.exceptions.EmptyStockException;
 import draftosaurus.domain.utils.ListShuffler;
+import draftosaurus.testUtils.UtilsMock;
 
 public class DinosauresDrawTest extends TestCase {
 
@@ -90,38 +91,29 @@ public class DinosauresDrawTest extends TestCase {
 
     }
 
+    public void testShouldGetStock() {
+        DinosauresDraw dinosauresDraw = instanciateDinosauresDrawWithIdentityShuffler(1);
+        
+        ArrayList<Dinosaure> stock = dinosauresDraw.getStock();
+
+        assertEquals(Specy.DIPLODOCUS, stock.get(0).getSpecy());
+        assertEquals(Specy.PARASAUROLOPHUS, stock.get(1).getSpecy());
+        assertEquals(Specy.SPINOSAURUS, stock.get(2).getSpecy());
+        assertEquals(Specy.STEGOSAURUS, stock.get(3).getSpecy());
+        assertEquals(Specy.TRICERATOPS, stock.get(4).getSpecy());
+        assertEquals(Specy.TYRANNOSAURUS, stock.get(5).getSpecy());
+    }
+
     private DinosauresDraw instanciateDinosauresDrawWithIdentityShuffler(Integer numberOfDinosaureBySpecy){
-        ListShufflerIdentityMock listShuffler = new ListShufflerIdentityMock();
+        ListShuffler listShuffler = UtilsMock.instanciateListShufflerIdentityMock();
         
         return new DinosauresDraw(listShuffler, numberOfDinosaureBySpecy);
     }
 
     private DinosauresDraw instanciateDinosauresDrawWithExchageTwoFirstsSuhffler(Integer numberOfDinosaureBySpecy){
-        ListShufflerExchageTwoFirstsMock listShuffler = new ListShufflerExchageTwoFirstsMock();
+        ListShuffler listShuffler = UtilsMock.instanciateListShufflerExchageTwoFirstsMock();
         
         return new DinosauresDraw(listShuffler, numberOfDinosaureBySpecy);
-    }
-
-    private class ListShufflerIdentityMock implements ListShuffler {
-
-        public <T> ArrayList<T> shuffleRandomly(ArrayList<T> list){
-            return list;
-        }
-
-    }
-
-    private class ListShufflerExchageTwoFirstsMock implements ListShuffler {
-
-        public <T> ArrayList<T> shuffleRandomly(ArrayList<T> list){
-            T element0 = list.get(0);
-            T element1 = list.get(1);
-            
-            list.set(0, element1);
-            list.set(1, element0);
-            
-            return list;
-        }
-
     }
 
 }

@@ -1,6 +1,6 @@
 package draftosaurus.domain.movesCheckers;
 
-import draftosaurus.domain.board.Paddock;
+import draftosaurus.domain.board.PaddockAttributes;
 import draftosaurus.domain.board.PaddockAssignements;
 import draftosaurus.domain.board.Side;
 
@@ -10,7 +10,7 @@ public class ConstraintCheckerCafeteria extends ConstraintChecker {
     private static boolean CAN_ASSIGN_AS_SIDE_IS_CAFETERIA = true;
     private static boolean CANNOT_ASSIGN_AS_SIDE_IS_NOT_CAFETERIA = false;
 
-    public ConstraintCheckerCafeteria(Paddock paddock, PaddockAssignements paddockAssignements) {
+    public ConstraintCheckerCafeteria(PaddockAttributes paddock, PaddockAssignements paddockAssignements) {
         super(paddock, paddockAssignements);
     }
 

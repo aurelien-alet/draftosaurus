@@ -6,19 +6,19 @@ import org.mockito.Mockito;
 import org.javatuples.Pair;
 
 import draftosaurus.domain.board.Biome;
-import draftosaurus.domain.board.Paddock;
+import draftosaurus.domain.board.PaddockAttributes;
 import draftosaurus.domain.board.PaddockAssignements;
 import draftosaurus.domain.board.Side;
 import draftosaurus.domain.dinosaures.Specy;
 
 public class BoardMock {
 
-    public static Paddock instanciatePaddock(){
-        return Mockito.mock(Paddock.class);
+    public static PaddockAttributes instanciatePaddockAttributesMock(){
+        return Mockito.mock(PaddockAttributes.class);
     }
 
-    public static Paddock instanciatePaddockWithAttributes(Side side, Biome biome){     
-        Paddock paddockMock =  Mockito.mock(Paddock.class);
+    public static PaddockAttributes instanciatePaddockAttributesWithAttributesMock(Side side, Biome biome){     
+        PaddockAttributes paddockMock =  Mockito.mock(PaddockAttributes.class);
 
         Mockito.when(paddockMock.getSide()).thenReturn(side);
         Mockito.when(paddockMock.getBiome()).thenReturn(biome);

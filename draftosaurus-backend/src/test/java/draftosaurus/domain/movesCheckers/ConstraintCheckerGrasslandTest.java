@@ -5,7 +5,7 @@ import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
 import draftosaurus.domain.board.Biome;
-import draftosaurus.domain.board.Paddock;
+import draftosaurus.domain.board.PaddockAttributes;
 import draftosaurus.domain.board.PaddockAssignements;
 import draftosaurus.domain.board.Side;
 
@@ -52,7 +52,7 @@ public class ConstraintCheckerGrasslandTest extends TestCase {
     }
 
     private static ConstraintCheckerGrassland instanciateConstraintCheckerGrassland(Side side, Biome biome){  
-        Paddock paddockMock = BoardMock.instanciatePaddockWithAttributes(side, biome);
+        PaddockAttributes paddockMock = BoardMock.instanciatePaddockAttributesWithAttributesMock(side, biome);
         PaddockAssignements paddockAssignementsMock = BoardMock.instanciatePaddockAssignementsMock();
 
         return new ConstraintCheckerGrassland(paddockMock,  paddockAssignementsMock);

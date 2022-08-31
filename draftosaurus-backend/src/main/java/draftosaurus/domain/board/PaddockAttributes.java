@@ -1,11 +1,11 @@
 package draftosaurus.domain.board;
 
-public class Paddock {
+public class PaddockAttributes {
     
     private Side side;
     private Biome biome;
 
-    public Paddock(Biome biome, Side side){
+    public PaddockAttributes(Biome biome, Side side){
         this.biome = biome;
         this.side= side;
     }

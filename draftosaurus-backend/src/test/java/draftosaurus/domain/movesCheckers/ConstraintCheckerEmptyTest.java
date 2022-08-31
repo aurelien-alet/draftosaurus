@@ -6,7 +6,7 @@ import junit.framework.TestSuite;
 
 import org.javatuples.Pair;
 
-import draftosaurus.domain.board.Paddock;
+import draftosaurus.domain.board.PaddockAttributes;
 import draftosaurus.domain.board.PaddockAssignements;
 import draftosaurus.domain.dinosaures.Specy;
 import draftosaurus.testUtils.BoardMock;
@@ -38,14 +38,14 @@ public class ConstraintCheckerEmptyTest extends TestCase {
     }
 
     private static ConstraintCheckerEmpty instanciateConstraintCheckerEmpty(){  
-        Paddock paddockMock = BoardMock.instanciatePaddock();
+        PaddockAttributes paddockMock = BoardMock.instanciatePaddockAttributesMock();
         PaddockAssignements paddockAssignementsMock = BoardMock.instanciatePaddockAssignementsMock();
 
         return new ConstraintCheckerEmpty(paddockMock, paddockAssignementsMock);
     }
 
     private static ConstraintCheckerEmpty instanciateConstraintCheckerWithDiplodocus(){  
-        Paddock paddockMock = BoardMock.instanciatePaddock();
+        PaddockAttributes paddockMock = BoardMock.instanciatePaddockAttributesMock();
         PaddockAssignements paddockAssignementsMock = BoardMock.instanciatePaddockAssignementsWithDinosauresMock(
             new Pair<>(1, Specy.DIPLODOCUS)
         );
